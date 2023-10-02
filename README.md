@@ -1,15 +1,14 @@
 <h1>Analyze Network Traffic with tcpdump</h1>
 
 <h2>Description</h2>
-This project consists of using tcpdump to capture and analyze TCP packets. We will also create a shell script with options and advanced expressions to filter the packets captured.
+This project consists of using tcpdump to capture and analyze TCP packets. We will also create a shell script with options and advanced expressions to filter the packets captured. Wireshark will also be used to analyze packet capture files.
 <br />
-
 
 <h2>Tools Used</h2>
 
 - <b>tcpdump</b>
 - <b>Wireshark</b>
-- <b>Visual Studio Code</b> 
+- <b>Visual Studio Code</b>
 
 <h2>Environment</h2>
 
@@ -33,7 +32,6 @@ Now we add even more options to further filter our results. First, -# will numbe
 <p align="center">
 <img width="696" alt="Untitled" src="https://github.com/chau-eric/tcpdump-capture/assets/76719902/1b8ebfb3-d045-4aea-9ab2-6c87aa0a6206">
 </p>
-<br />
 
 <h4>Creating packet capture files with size and time limits</h4>
 Now let's say we want to store the captured packets in a file for later access or to analyze in another tool. We can use the -w option to write the captures to a specified .pcap file to accomplish this, which in this case is named captured.pcap. However, let's say we only want to see traffic within the last 10 minutes, or 600 seconds. The -G option will wipe the contents of the file after the specified seconds have passed. We should also be careful of our .pcap file from becoming too large. The -C option allows us to specify the maximum file size, in million bytes, that we want the file to be. In this case, let's say we don't want our file to be more than 1 million bytes. Now with these options, we no longer have to limit our packet captures by number of packets, so we can remove the -c option completely. We also want to use the -XX option to format the packet contents in hexadecimal and ASCII representation for later analysis. <br/><br/>
@@ -63,7 +61,7 @@ However, we can see that this is not yet an executible. To do this, we simply ne
 <br/><p align="center">
 <img width="699" alt="Untitled" src="https://github.com/chau-eric/tcpdump-capture/assets/76719902/81ccc9b0-75ef-4c9b-bec1-a1a35242ee6b">
 </p>
-And the project is finished! We can now executed advanced.sh in the terminal to capture GET tcp traffic.
+And the project is finished! We can now execute advanced.sh in the terminal to capture GET tcp traffic.
 <br/><p align="center">
 <img width="697" alt="Untitled" src="https://github.com/chau-eric/tcpdump-capture/assets/76719902/a6beb9b3-3276-4f5a-9c2c-45743903bebd">
 </p>
